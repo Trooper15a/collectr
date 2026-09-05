@@ -171,27 +171,34 @@ Sign in with Google, Microsoft, or GitHub.
 
 Sign in with the **same account** you used on your computer.
 
-### Step 3: Find Your Computer's Tailscale IP
+### Step 3: Enable HTTPS in Tailscale
 
-Open a terminal and run:
+The camera scanner requires HTTPS. Tailscale gives you a free valid certificate.
+
+1. Go to the [Tailscale admin console](https://login.tailscale.com/admin/dns) in your browser
+2. Scroll to **HTTPS Certificates** and enable it
+
+### Step 4: Start the HTTPS Proxy
+
+On your computer, open a terminal and run:
 
 ```bash
-tailscale ip -4
+tailscale serve --bg http://localhost:3000
 ```
 
-You'll get an IP like `100.x.x.x` — this never changes.
+This creates a permanent HTTPS URL for your app (something like `https://your-computer.tail1234.ts.net`). The command will print your exact URL.
 
-### Step 4: Open on Your Phone
+To check your URL anytime:
 
-On your phone's browser, go to:
-
-```
-http://YOUR_TAILSCALE_IP:3000
+```bash
+tailscale serve status
 ```
 
-Example: `http://100.66.154.18:3000`
+### Step 5: Open on Your Phone
 
-That's it! Bookmark it on your phone. The connection is end-to-end encrypted with WireGuard — more secure than most HTTPS websites. Camera scanning works because Tailscale IPs are treated as private network addresses.
+On your phone's browser, open the `https://...ts.net` URL from the previous step. Bookmark it — the link is permanent.
+
+The connection is end-to-end encrypted with WireGuard. The camera scanner works because you have a valid HTTPS certificate.
 
 > **Tip**: On iPhone, tap Share → "Add to Home Screen" to make it feel like a native app.
 
