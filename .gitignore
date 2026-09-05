@@ -8,6 +8,7 @@ ml/.venv/
 .env.local
 .env.production
 .env.*.local
+!.env.example
 
 # Database (user data)
 web/data/*.db

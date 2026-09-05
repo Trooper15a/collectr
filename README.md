@@ -6,6 +6,11 @@ A free, open-source TCG portfolio tracker with an **AI-powered card scanner** th
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+<p align="center">
+  <img src="screenshots/portfolio.png" alt="Portfolio dashboard" width="300" />
+  <img src="screenshots/scanner.png" alt="Card scanner" width="300" />
+</p>
+
 ---
 
 ## Features
@@ -153,9 +158,11 @@ cd ml
 
 ---
 
-## Self-Hosting
+## Access From Anywhere (Free)
 
-You can self-host Collectr on a VPS or cloud platform to access your collection from anywhere — but this will **not be free**. Expect to pay ~$4-6/month for a VPS (Hetzner, DigitalOcean, etc.) or similar for platforms like Railway or Vercel's paid tier.
+Want to use Collectr outside your home WiFi? Install [Tailscale](https://tailscale.com) (free for personal use) on your computer and phone, sign in with the same account, then open `http://YOUR_TAILSCALE_IP:3000` on your phone. Only your devices can access it — completely private, works from cellular or any WiFi.
+
+You can also self-host on a VPS or cloud platform, but that will **not be free** (~$4-6/month).
 
 ---
 
