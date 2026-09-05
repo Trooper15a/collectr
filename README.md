@@ -153,11 +153,51 @@ cd ml
 
 ---
 
-## Access From Anywhere (Free)
+## Access From Anywhere (Free with Tailscale)
 
-Want to use Collectr outside your home WiFi? Install [Tailscale](https://tailscale.com) (free for personal use) on your computer and phone, sign in with the same account, then open `http://YOUR_TAILSCALE_IP:3000` on your phone. Only your devices can access it — completely private, works from cellular or any WiFi.
+Want to use Collect Them All outside your home WiFi — on cellular, at work, anywhere? Use [Tailscale](https://tailscale.com) (free for personal use). It creates a private encrypted network between your devices so only you can access your server.
 
-You can also self-host on a VPS or cloud platform, but that will **not be free** (~$4-6/month).
+### Step 1: Install Tailscale on Your Computer
+
+- **Windows**: Download from [tailscale.com/download](https://tailscale.com/download) and install
+- **Mac**: Download from the App Store or [tailscale.com/download](https://tailscale.com/download)
+
+Sign in with Google, Microsoft, or GitHub.
+
+### Step 2: Install Tailscale on Your Phone
+
+- **iPhone**: Download [Tailscale](https://apps.apple.com/app/tailscale/id1470499037) from the App Store
+- **Android**: Download [Tailscale](https://play.google.com/store/apps/details?id=com.tailscale.ipn) from Google Play
+
+Sign in with the **same account** you used on your computer.
+
+### Step 3: Find Your Computer's Tailscale IP
+
+Open a terminal and run:
+
+```bash
+tailscale ip -4
+```
+
+You'll get an IP like `100.x.x.x` — this never changes.
+
+### Step 4: Open on Your Phone
+
+On your phone's browser, go to:
+
+```
+http://YOUR_TAILSCALE_IP:3000
+```
+
+Example: `http://100.66.154.18:3000`
+
+That's it! Bookmark it on your phone. The connection is end-to-end encrypted with WireGuard — more secure than most HTTPS websites. Camera scanning works because Tailscale IPs are treated as private network addresses.
+
+> **Tip**: On iPhone, tap Share → "Add to Home Screen" to make it feel like a native app.
+
+### Alternative: Self-Hosting (Not Free)
+
+You can also self-host on a VPS or cloud platform (~$4-6/month for Hetzner, DigitalOcean, Railway, etc.).
 
 ---
 
