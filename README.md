@@ -6,11 +6,6 @@ A free, open-source TCG portfolio tracker with an **AI-powered card scanner** th
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-<p align="center">
-  <img src="screenshots/portfolio.png" alt="Portfolio dashboard" width="300" />
-  <img src="screenshots/scanner.png" alt="Card scanner" width="300" />
-</p>
-
 ---
 
 ## Features
