@@ -1,0 +1,43 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "dev:https": "next dev -H 0.0.0.0 --experimental-https",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "refresh-prices": "curl -s -X POST http://localhost:3000/api/prices/refresh",
+    "postinstall": "node scripts/copy-ort.mjs",
+    "start:https": "node server.mjs",
+    "autostart:install": "powershell -ExecutionPolicy Bypass -File scripts/install-autostart.ps1",
+    "autostart:remove": "powershell -ExecutionPolicy Bypass -File scripts/install-autostart.ps1 -Remove"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "drizzle-orm": "^0.45.2",
+    "next": "16.3.4",
+    "node-cron": "^4.6.0",
+    "onnxruntime-web": "^1.29.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "recharts": "^3.10.1",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^20",
+    "@types/node-cron": "^3.0.11",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.4",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.13",
+    "typescript": "^5"
+  }
+}

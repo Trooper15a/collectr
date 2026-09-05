@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+web/node_modules/
+ml/.venv/
+
+# Environment & secrets
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Database (user data)
+web/data/*.db
+web/data/*.db-shm
+web/data/*.db-wal
+web/data/server.log
+web/data/images/
+
+# SSL certificates
+web/certificates/
+ca.crt
+ca.key
+
+# ML training data & artifacts (too large for git)
+ml/data/images/
+ml/data/manifest.jsonl
+ml/data/sets_cache.json
+ml/data/bad_images.json
+ml/data/scryfall_default_cards.jsonl.gz
+ml/data/tcgcsv_archive/
+ml/data/ygoprodeck_cardinfo.json
+ml/artifacts/
+__pycache__/
+*.pyc
+
+# Build output
+web/.next/
+web/out/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
+
+# Misc
+*.log
+*.part
