@@ -31,12 +31,22 @@ export async function resolveScanId(scanId: string): Promise<{ card: NormalizedC
   const num = (idx.num ?? "").trim();
   const name = (idx.name ?? "").trim();
 
-  // 1) Local TCGCSV products (English names + numbers): free and instant.
-  if (lang === "eng" && name && num) {
+  // 1) Local TCGCSV products: free and instant.
+  // English: match by name + number. Japanese: match by set code + number only
+  // (TCGCSV stores Japanese cards with English names, so name matching won't work for JP scans).
+  if (num) {
+    const numNorm = num.replace(/^0+(?=\d)/, "");
+    const numFilter = or(like(schema.cards.cardNumber, `${num}%`), like(schema.cards.cardNumber, `${numNorm}%`));
+    const conditions = [eq(schema.cards.tcg, "pokemon"), eq(schema.cards.language, lang), sql`id like 'tp:%'`, numFilter];
+    if (lang === "eng" && name) {
+      conditions.push(like(schema.cards.name, `${name}%`));
+    } else if (setCode) {
+      conditions.push(eq(schema.cards.setCode, setCode));
+    }
     const rows = db
       .select()
       .from(schema.cards)
-      .where(and(eq(schema.cards.tcg, "pokemon"), eq(schema.cards.language, "eng"), sql`id like 'tp:%'`, like(schema.cards.name, `${name}%`), or(like(schema.cards.cardNumber, `${num}%`), like(schema.cards.cardNumber, `${num.replace(/^0+(?=\d)/, "")}%`))))
+      .where(and(...conditions))
       .limit(10)
       .all();
     const local = pickMatch(rows.map(rowToCard), { setCode, num, name, lang });
