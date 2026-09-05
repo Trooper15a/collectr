@@ -153,6 +153,12 @@ cd ml
 
 ---
 
+## Self-Hosting
+
+You can self-host Collectr on a VPS or cloud platform to access your collection from anywhere — but this will **not be free**. Expect to pay ~$4-6/month for a VPS (Hetzner, DigitalOcean, etc.) or similar for platforms like Railway or Vercel's paid tier.
+
+---
+
 ## Data Sources
 
 | Data | Source | API Key |
