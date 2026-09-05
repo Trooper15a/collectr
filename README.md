@@ -1,4 +1,4 @@
-# Collectr
+# Collect Them All
 
 A free, open-source TCG portfolio tracker with an **AI-powered card scanner** that runs entirely on your device. No cloud fees, no subscriptions, no data collection.
 
@@ -48,7 +48,7 @@ Open your terminal:
 Copy and paste this command, then press Enter:
 
 ```bash
-git clone https://github.com/Trooper15a/collectr.git
+git clone https://github.com/Trooper15a/collect_them_all.git
 ```
 
 ### Step 2: Install Dependencies
