@@ -9,15 +9,15 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Collectr",
-  description: "Personal TCG portfolio tracker",
+  title: "Collect Them All",
+  description: "AI-powered TCG portfolio tracker",
   manifest: "/manifest.json",
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Collectr" },
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Collect Them All" },
   icons: { icon: "/icons/icon-192.png", apple: "/icons/apple-touch-icon.png" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#07080c",
+  themeColor: "#0a0e1a",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,

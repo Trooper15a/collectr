@@ -105,7 +105,7 @@ function analyzeCentering(canvas: HTMLCanvasElement): CenteringResult {
 }
 
 function SubGradeSlider({ label, value, onChange, description }: { label: string; value: number; onChange: (v: number) => void; description: string }) {
-  const color = value >= 9 ? "text-up" : value >= 7 ? "text-yellow-400" : "text-down";
+  const color = value >= 9 ? "text-up" : value >= 7 ? "text-accent" : "text-down";
   return (
     <div className="py-3">
       <div className="flex items-baseline justify-between mb-1">
@@ -298,7 +298,7 @@ export default function GradeEstimatorPage() {
                   {centering && (
                     <div className="mt-2 text-center">
                       <span className="text-xs text-muted">Centering score: </span>
-                      <span className={`text-sm font-bold ${centering.score >= 9 ? "text-up" : centering.score >= 7 ? "text-yellow-400" : "text-down"}`}>
+                      <span className={`text-sm font-bold ${centering.score >= 9 ? "text-up" : centering.score >= 7 ? "text-accent" : "text-down"}`}>
                         {centering.score}/10
                       </span>
                       <span className="text-xs text-muted ml-2">({centering.psaCentering})</span>
@@ -353,7 +353,7 @@ export default function GradeEstimatorPage() {
                   ].map((s) => (
                     <div key={s.label} className="rounded-xl bg-white/[0.03] border border-line py-2">
                       <div className="text-[10px] text-muted uppercase tracking-wider">{s.label}</div>
-                      <div className={`font-bold tabular ${s.val >= 9 ? "text-up" : s.val >= 7 ? "text-yellow-400" : "text-down"}`}>
+                      <div className={`font-bold tabular ${s.val >= 9 ? "text-up" : s.val >= 7 ? "text-accent" : "text-down"}`}>
                         {s.val.toFixed(1)}
                       </div>
                     </div>
@@ -362,7 +362,7 @@ export default function GradeEstimatorPage() {
 
                 <div className="h-2 rounded-full bg-white/[0.06] overflow-hidden">
                   <div
-                    className={`h-full ${grade.overall >= 9 ? "bg-up" : grade.overall >= 7 ? "bg-yellow-400" : "bg-down"}`}
+                    className={`h-full ${grade.overall >= 9 ? "bg-up" : grade.overall >= 7 ? "bg-accent" : "bg-down"}`}
                     style={{ width: `${(grade.overall / 10) * 100}%` }}
                   />
                 </div>
