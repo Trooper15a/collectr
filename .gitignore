@@ -18,8 +18,13 @@ web/data/images/
 
 # SSL certificates
 web/certificates/
+web/cert.crt
+web/cert.key
+web/public/rootCA.crt
 ca.crt
 ca.key
+*.crt
+*.key
 
 # ML training data & artifacts (too large for git)
 ml/data/images/
