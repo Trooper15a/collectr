@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Button, Field, Section, Skeleton, inputCls } from "@/components/ui";
+import { OfflineStatus } from "@/components/OfflineStatus";
 import { CURRENCIES } from "@/lib/types";
 
 interface Settings {
@@ -159,6 +160,10 @@ export default function SettingsPage() {
 
       <Section title="Scanner">
         <UpdateIndexPanel />
+      </Section>
+
+      <Section title="Offline mode">
+        <OfflineStatus />
       </Section>
     </div>
   );
