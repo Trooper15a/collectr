@@ -119,14 +119,6 @@ const RESTOCK_ALERTS: RestockAlert[] = [
   },
 ];
 
-const SEALED_CATEGORIES = [
-  { label: "Booster Boxes", keywords: "pokemon booster box" },
-  { label: "Elite Trainer Boxes", keywords: "pokemon elite trainer box etb" },
-  { label: "Bundles & Collection Boxes", keywords: "pokemon bundle collection box" },
-  { label: "Tins", keywords: "pokemon tin" },
-  { label: "Booster Packs", keywords: "pokemon booster pack" },
-  { label: "Japanese Sealed", keywords: "pokemon japanese booster box" },
-];
 
 export default function ShopPage() {
   const [cat, setCat] = useState<Category>("all");
@@ -182,24 +174,6 @@ export default function ShopPage() {
           ]}
         />
       </div>
-
-      {(cat === "all" || cat === "sealed") && (
-        <section className="mt-5">
-          <h2 className="text-sm font-semibold text-muted uppercase tracking-wider mb-3">Quick links by product type</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-            {SEALED_CATEGORIES.map((sc) => (
-              <button
-                key={sc.label}
-                onClick={() => { setQ(sc.keywords); }}
-                className="card-surface rounded-2xl p-3 text-left hover:bg-white/[0.06] transition"
-              >
-                <div className="text-sm font-semibold">{sc.label}</div>
-                <div className="text-[10px] text-muted mt-0.5">Tap then Search</div>
-              </button>
-            ))}
-          </div>
-        </section>
-      )}
 
       {(cat === "all" || cat === "retail") && (
         <section className="mt-5">
